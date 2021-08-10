@@ -17,8 +17,8 @@ int main(int argc, char* argv[])
 	}
 	else if (argc != 3)
 	{
-		printf("Interpreter Error: Invalid arguments. Only 3 arguments expected. %i arguments given \n\n Format: jewel run {PATH_TO_FILE}", argc);
+		printf("\033[31m Interpreter Error: Invalid arguments. Only 3 arguments expected. %i arguments given \n\n \033[33mFormat: jewel run {PATH_TO_FILE} \033[37m", argc);
 	}
 
 	return 0;
-}
+} 

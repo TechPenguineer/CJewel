@@ -8,10 +8,8 @@ flags=-g
 
 
 build:
-	gcc $(flags) $(sources) $(headers) $< - o out/$@.o
+	gcc $(flags) $(sources) $(headers) -o out/
 
-%.o: %.c include/%.h
-	gcc -c $(flags) $< -o $@
 	
 clean:
 	-rm *.exe

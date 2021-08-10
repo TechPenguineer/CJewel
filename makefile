@@ -6,4 +6,4 @@ interpreterEXE = Jewel.exe
 interpreter=$(wildcard interpreter/*.c)
 
 build-interpreter:
-	$(cc) $(flags) $(interpreter) $(outDIR) $(interpreterEXE)
+	$(cc) $(flags) $(interpreter) $(outDIR)$(interpreterEXE)

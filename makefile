@@ -8,10 +8,8 @@ flags=-g
 
 
 build:
-	gcc $(flags) $(sources) $(headers) -o out/
-
+	gcc $(flags) $(sources) -Iinclude $(headers) -o out/Jewel.exe
 	
 clean:
-	-rm *.exe
-	-rm *.o
-	-rm src/*.o
+	-rm out/*.exe
+	-rm out/*.stackdump

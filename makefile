@@ -1,9 +1,19 @@
-cc=gcc
-flags=-g -Wall
-outDIR = -o $(wildcard out/)
+  
+exec=Jewel.exe
+sources=$(wildcard src/*.c)
+headers=$(wildcard src/include/*.h)
+objects=$(sources:.c=.o)
 
-interpreterEXE = Jewel.exe
-interpreter=$(wildcard interpreter/*.c)
+flags=-g 
 
-build-interpreter:
-	$(cc) $(flags) $(interpreter) $(outDIR)$(interpreterEXE)
+
+build:
+	gcc $(flags) $(sources) $(headers) $< - o out/$@.o
+
+%.o: %.c include/%.h
+	gcc -c $(flags) $< -o $@
+	
+clean:
+	-rm *.exe
+	-rm *.o
+	-rm src/*.o

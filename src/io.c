@@ -1,12 +1,30 @@
 #include "include/io.h"
-#include <sys/stat.h>
-#include <cstdbool.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 
-
-bool FileExists(const char* path)
+char* get_file_contents(const char* filepath)
 {
-	struct stat buffer;
-	return (stat(path, &buffer) == 0);
+    char* buffer = 0;
+    long length;
 
+    FILE* f = fopen(filepath, "rb");
+
+    if (f)
+    {
+        fseek(f, 0, SEEK_END);
+        length = ftell(f);
+        fseek(f, 0, SEEK_SET);
+
+        buffer = calloc(length, length);
+
+        if (buffer)
+            fread(buffer, 1, length, f);
+
+        fclose(f);
+        return buffer;
+    }
+
+    printf("Error reading file %s\n", filepath);
+    exit(2);
 }

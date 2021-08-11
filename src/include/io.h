@@ -1,10 +1,6 @@
 #ifndef IO_H
 #define IO_H
 
-#include <sys/stat.h>
-#include <cstdbool>
+char* get_file_contents(const char* filepath);
 
-int FileExists(const char* path);
-
-
-#endif // !IO_H
+#endif

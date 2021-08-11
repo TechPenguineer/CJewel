@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
         for(int i = 1; i < argc; i++){
             int len = strlen(argv[i]);
             char* last_four = &argv[i][len-6];
-            if(strcmp(last_four,".hello") == 0){
+            if(strcmp(last_four,".jwl") == 0){
                                 lexer_T* lexer = init_lexer(
                     get_file_contents(argv[i])
                 );
@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
     else {
         char input[MAX_LIMIT];
         while(1){
-            printf("Welcome to the hello language v. 0.0.1!\nCreated by sebbekarlsson\n>>> ");
+            printf("Jewel v. 0.0.1!\n>>> ");
             fgets(input,MAX_LIMIT, stdin);
             lexer_T* lexer = init_lexer(input);
             parser_T* parser = init_parser(lexer);

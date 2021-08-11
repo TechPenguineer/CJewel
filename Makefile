@@ -1,4 +1,4 @@
-exec = jewel.exe
+exec = jewel
 sources = $(wildcard src/*.c)
 objects = $(sources:.c=.o)
 flags = -g
@@ -12,10 +12,10 @@ $(exec): $(objects)
 
 install:
 	make
-	sudo cp ./$(exec) /usr/local/bin/Jewel
+	sudo cp ./$(exec) /usr/local/bin/jewel
 
 clean:
 	-rm *.out
 	-rm *.o
 	-rm src/*.o
-	-sudo rm /usr/local/bin/Jewel/*.exe
+	-sudo rm /usr/local/bin/jewel

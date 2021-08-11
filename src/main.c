@@ -8,7 +8,7 @@
 #define MAX_LIMIT 20
 void print_help()
 {
-    printf("Usage:\nhello.out <filename>\n");
+    printf("Usage:\njewel <filename>\n");
     exit(1);
 }
 
@@ -18,8 +18,8 @@ int main(int argc, char* argv[])
         for(int i = 1; i < argc; i++){
             int len = strlen(argv[i]);
             char* last_four = &argv[i][len-6];
-            if(strcmp(last_four,".jwl") == 0){
-                                lexer_T* lexer = init_lexer(
+            if(strcmp(last_four,".jwel") == 0){
+                    lexer_T* lexer = init_lexer(
                     get_file_contents(argv[i])
                 );
                 parser_T* parser = init_parser(lexer);
